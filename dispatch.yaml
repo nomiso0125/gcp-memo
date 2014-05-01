@@ -1,0 +1,12 @@
+application: gcp-memo
+
+dispatch:
+- url: "*/job/*"
+  module: job
+
+- url: "*/admin/*"
+  module: admin
+
+
+
+
