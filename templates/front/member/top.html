@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8"/>
-    <title>Member - Google Cloud Platform Memo</title>
-</head>
-<body>
-<h1>Hello! This is MyPage!</h1>
+{% from 'front/_base_macro.html' import base %}
+{% call base(1) -%}
 
-<p>
-I am {{ nickname }}
-</p>
+  <h1>マイページ</h1>
 
-<ul>
-  <li><a href="/member/movie">会員専用動画再生</a></li>
-  <li><a href="{{ logout_url }}">Logout</a></li>
-</ul>
+  <p>
+    ようこそ {{ nickname }} さん！
+  </p>
+  <hr>
+  <a type="button" class="btn btn-primary" href="/member/movie">非公開動画再生</a>
+  <a type="button" class="btn btn-dedault" href="{{ logout_url }}">ログアウト</a>
 
-</body>
-</html>
+{%- endcall %}
+

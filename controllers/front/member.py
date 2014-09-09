@@ -6,9 +6,9 @@ from google.appengine.api import users
 from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers
 
+
 class Top(Controller):
     def get(self):
-
         # ニックネームを得る
         user = users.get_current_user()
         nickname = user.nickname()
@@ -20,6 +20,7 @@ class Top(Controller):
 
         self.draw_template('front/member/top.html')
 
+
 class Movie(Controller):
     def get(self):
         self.draw_template('front/member/movie.html')
@@ -27,10 +28,10 @@ class Movie(Controller):
 
 class PlayMovie(blobstore_handlers.BlobstoreDownloadHandler):
     def get(self):
-
         blob_key = blobstore.create_gs_key('/gs/gcp-memo.appspot.com/movies/meteorite.mp4')
 
         self.send_blob(blob_key)
+
 
 url_map = [
     ('/member/top', Top),

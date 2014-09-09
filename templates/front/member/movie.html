@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8"/>
-    <title>Movie - Google Cloud Platform Memo</title>
-</head>
-<body>
-<h1>メンバー向けの動画再生</h1>
+{% from 'front/_base_macro.html' import base %}
+{% call base(1) -%}
 
-<video src="/member/play_movie" controls autoplay></video>
+  <h1>非公開動画再生</h1>
 
-</body>
-</html>
+  <video src="/member/play_movie" controls autoplay></video>
+  <hr>
+  <a type="button" class="btn btn-primary" href="/member/top">もどる</a>
+
+{%- endcall %}
+

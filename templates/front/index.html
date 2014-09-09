@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8"/>
-    <title>Google Cloud Platform Memo</title>
-</head>
-<body>
-    <h1>Google Cloud Platform Memo</h1>
+{% from 'front/_base_macro.html' import base %}
+{% call base(0) -%}
+  <p>
+    このサイトは、<a href="http://gcp-memo.nomiso.net/" target="_blank">Google Cloud Platform Memo</a> で紹介した記事のサンプルアプリケーションです。
+  </p>
+  <p>
+    ソースコードは<a href="https://github.com/nomiso0125/gcp-memo" target="_blank">こちら(Github)</a>で公開しています。
+  </p>
 
-    <ul>
-      <li><a href="/member/top">OpenID認証</a></li>
-    </ul>
-</body>
-</html>
+{%- endcall %}

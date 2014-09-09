@@ -29,7 +29,7 @@ handlers:
 
 - url: /member/(.*)
   script: controllers.front.member.application
-  secure: optional
+  secure: always
   login: required
 
 - url: (/)
