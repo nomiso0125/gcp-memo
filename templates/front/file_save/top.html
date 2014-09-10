@@ -1,0 +1,34 @@
+{% from 'front/_base_macro.html' import base %}
+{% call base(2) -%}
+
+  <h1>ファイル保存方法いろいろ</h1>
+  <hr>
+  <h2>1.BlobPropertyに保存</h2>
+  <form role="form" method="post" action="upload1" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="file" id="exampleInputFile" name="file_data">
+    </div>
+    <button type="submit" class="btn btn-default">保存</button>
+  </form>
+  <hr>
+  <h2>2.Blobstoreに保存</h2>
+  <form role="form" method="post" action="{{ upload_url }}" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="file" id="exampleInputFile" name="file_data">
+    </div>
+    <button type="submit" class="btn btn-default">保存</button>
+  </form>
+  <hr>
+  <h2>3.Google Cloud Storageに保存</h2>
+  <form role="form" method="post" action="upload3" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="file" id="exampleInputFile" name="file_data">
+    </div>
+    <button type="submit" class="btn btn-default">保存</button>
+  </form>
+
+
+
+
+{%- endcall %}
+
