@@ -1,0 +1,15 @@
+{% from 'front/_base_macro.html' import base %}
+{% call base(3) -%}
+
+  <h1>Google Custom Search</h1>
+  <p>価格.comのレビューのみを検索します。</p>
+  <form role="form" method="post" action="search">
+    <div class="form-group">
+      <label for="keyword">検索キーワード</label>
+      <input type="text" id="keyword" name="keyword">
+    </div>
+    <button type="submit" class="btn btn-default">検索</button>
+  </form>
+
+{%- endcall %}
+

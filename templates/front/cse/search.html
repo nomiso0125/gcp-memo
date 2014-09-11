@@ -1,0 +1,11 @@
+{% from 'front/_base_macro.html' import base %}
+{% call base(3) -%}
+
+  <h1>検索結果</h1>
+  <p>
+    {% for item in items %}
+      {{ item.title }}<br>
+    {% endfor %}
+  </p>
+{%- endcall %}
+
