@@ -3,12 +3,30 @@
 
   <h1>Google Custom Search</h1>
   <p>価格.comのレビューのみを検索します。</p>
-  <form role="form" method="post" action="search">
+
+
+  <form class="form-horizontal" role="form" action="search" method="post">
     <div class="form-group">
-      <label for="keyword">検索キーワード</label>
-      <input type="text" id="keyword" name="keyword">
+      <label class="col-sm-2 control-label" for="keyword">キーワード</label>
+      <div class="col-sm-10">
+        <input type="text" id="keyword" name="keyword" class="form-control" >
+      </div>
     </div>
-    <button type="submit" class="btn btn-default">検索</button>
+    <div class="form-group">
+      <label for="stars" class="col-sm-2 control-label">評価</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="stars" name="stars">
+          <option value="">指定しない</option>
+          <option value="1.0">★☆☆☆☆</option>
+          <option value="2.0">★★☆☆☆</option>
+          <option value="3.0">★★★☆☆</option>
+          <option value="4.0">★★★★☆</option>
+          <option value="5.0">★★★★★</option>
+        </select>
+
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">検索</button>
   </form>
 
 {%- endcall %}

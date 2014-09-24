@@ -16,13 +16,20 @@ class Top(Controller):
 class Search(Controller):
     def post(self):
 
-        # キーワードを得る(URLエンコードしておく)
+        # キーワードを得る
         keyword = self.request.get('keyword')
+
+        # 評価が指定されていればキーワードに追加
+        stars = self.request.get('stars')
+        if stars:
+            keyword += ' ' + 'more:pagemap:review-ratingstars:%s' % stars
+
+        # urlエンコード
         keyword = urllib.quote(keyword.encode('utf-8'))
 
         # リクエストパラメータ組み立て
         url = 'https://www.googleapis.com/customsearch/v1'
-        url += '?key=%s' % 'AIzaSyCQGX2FdKvrv_XTAr_EdO2H156vF8E2HeU'
+        url += '?key=%s' % 'YOUR_API_KEY'
         url += '&cx=%s' % '000122034385005128488:etmrnaufuww'
         url += '&q=%s' % keyword
 
@@ -34,7 +41,7 @@ class Search(Controller):
         items = list()
         if not 200 <= result.status_code <= 299:
             # エラー
-            logging.error('google custom search error: $s' % str(result.status_code))
+            logging.error('google custom search error: %s' % str(result.status_code))
             logging.error(result.content)
         else:
             # 結果を得る

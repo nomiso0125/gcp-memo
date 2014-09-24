@@ -4,7 +4,7 @@
   <h1>検索結果</h1>
   <p>
     {% for item in items %}
-      {{ item.title }}<br>
+      <a href="{{ item.link }}" target="_blank">{{ item.title }}</a><br>
     {% endfor %}
   </p>
 {%- endcall %}
