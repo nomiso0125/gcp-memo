@@ -17,6 +17,9 @@ libraries:
 inbound_services:
 - warmup
 
+builtins:
+- deferred: on
+
 handlers:
 - url: /(css|images|js|etc)/(.*)
   static_files: static_files/front/\1/\2
@@ -26,6 +29,10 @@ handlers:
 - url: /_ah/(warmup|xrds|login_required)
   script: controllers.front.system.application
   secure: always
+
+- url: /_ah/queue/deferred
+  script: google.appengine.ext.deferred.deferred.application
+  login: admin
 
 - url: /member/(.*)
   script: controllers.front.member.application
